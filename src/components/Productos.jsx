@@ -1,9 +1,9 @@
 import { useCart } from '../hooks/useCart.jsx';
 import './Productos.css';
-import { AddToCartIcon } from "./iconos.jsx";
+import { AddToCartIcon, RemoveFromCartIcon } from "./iconos.jsx";
 
 export function Productos ({products}){
-    const {addToCart, cart}= useCart()
+    const {addToCart, cart, removeFromCart}= useCart()
 
     const checkProductInCart=product=>{
         return cart.some(item => item.id == product.id);
@@ -20,8 +20,12 @@ export function Productos ({products}){
                             <strong>{product.title}</strong>-${product.price}
                         </div>
                         <div>
-                            <button onClick={()=>addToCart(product)}>
-                                <AddToCartIcon/>
+                            <button   onClick={()=>isProductIncart? removeFromCart(product):addToCart(product)}>
+                                {
+                                    isProductIncart
+                                    ? <RemoveFromCartIcon/>
+                                    :<AddToCartIcon/>
+                                }
                             </button>
                         </div>
                     </li>

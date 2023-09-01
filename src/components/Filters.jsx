@@ -25,7 +25,7 @@ export function Filters(){
                 <input type="range" 
                 id={minPriceFilterId} 
                 min='0'
-                max='1000'
+                max='100'
                 onChange={handleChangeMinPrice}
                 value={filters.minPrice}
                 />
@@ -34,9 +34,13 @@ export function Filters(){
             <div>
                 <label htmlFor={contegoryFilterId}>Categoria</label>
                 <select id={contegoryFilterId} onChange={handleChangeCategory}>
-                    <option value="all">Todas</option>
-                    <option value="laptops">Laptops</option>
-                    <option value="smartphone">Celulraes</option>
+                    <option value="all">Todo</option>
+                    <option value="Yoga y Pilates">Yoga y Pilates</option>
+                    <option value="Futbol">Futbol</option>
+                    <option value="Mochilas deportivas">Mochilas deportivas</option>
+                    <option value="Ciclismo">Ciclismo</option>
+                    <option value="Boxeo">Boxeo</option>
+
                 </select>
             </div>
         </section>

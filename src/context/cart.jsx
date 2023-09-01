@@ -19,6 +19,9 @@ import { createContext, useState } from "react";
             }
         ]))
     }
+    const removeFromCart= product=>{
+        setCart(prevState=> prevState.filter(item => item.id != product.id))
+    }
     const clearCart=()=>{
         setCart([])
     }
@@ -27,7 +30,7 @@ import { createContext, useState } from "react";
         <CartContext.Provider value={{
             cart,
             addToCart,
-            clearCart
+            clearCart, removeFromCart
         }}>
             {children}
         </CartContext.Provider>
